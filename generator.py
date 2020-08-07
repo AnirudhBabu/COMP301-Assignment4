@@ -6,6 +6,7 @@ and vocabulary. Words are chosen at random.
 
 import random
 
+numbers = (0,0,0,0,1,1,1,1,1)
 
 def getWords(filename):
     """Accepts a file name as a parameter and appends the lines of the files of the file opened to words_list
@@ -21,11 +22,12 @@ def getWords(filename):
 articles = getWords("articles.txt")
 nouns = getWords("nouns.txt")
 verbs = getWords("verbs.txt")
-prepositions = getWords("prepositions.txt")    
+prepositions = getWords("prepositions.txt")
+conjunctions = getWords("conjunctions.txt")  
     
 def sentence():
     """Builds and returns a sentence."""
-    return nounPhrase() + " " + verbPhrase()
+    return nounPhrase() + " " + verbPhrase() + " " + (conjunctionsClause() if random.choice(numbers) else "")
 
 def nounPhrase():
     """Builds and returns a noun phrase."""
@@ -33,11 +35,14 @@ def nounPhrase():
 
 def verbPhrase():
     """Builds and returns a verb phrase."""
-    return random.choice(verbs) + " " + nounPhrase() + " " + prepositionalPhrase()
+    return random.choice(verbs) + " " + nounPhrase() + (prepositionalPhrase() if random.choice(numbers) == 1 else "")
 
 def prepositionalPhrase():
     """Builds and returns a prepositional phrase."""
-    return random.choice(prepositions) + " " + nounPhrase()
+    return " " + random.choice(prepositions) + " " + nounPhrase()
+
+def conjunctionsClause():
+    return random.choice(conjunctions) + " " + sentence()
 
 def main():
     """Allows the user to input the number of sentences
