@@ -31,7 +31,8 @@ def sentence():
 
 def nounPhrase():
     """Builds and returns a noun phrase."""
-    return random.choice(articles) + " " + random.choice(nouns)
+    nounSelected = random.choice(nouns)
+    return (articles[1] if nounSelected[0] in ['A','E','I','O','U'] else random.choice([articles[0], articles[2]])) + " " + nounSelected
 
 def verbPhrase():
     """Builds and returns a verb phrase."""
