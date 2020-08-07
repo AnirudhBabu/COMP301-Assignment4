@@ -9,7 +9,7 @@ import random
 
 def getWords(filename):
     """Accepts a file name as a parameter and appends the lines of the files of the file opened to words_list
-    and returns it as a tuple"""
+        and returns it as a tuple"""
     words_list = []
     with open(filename) as file:
         for line in file:
