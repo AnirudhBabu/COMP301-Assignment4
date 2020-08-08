@@ -22,6 +22,7 @@ def getWords(filename):
     return tuple(words_list)
 
 # assigning tuples containing words to be used obtained by reading files provided
+#"articles" = getWords("articles.txt")
 articles = getWords("articles.txt")
 nouns = getWords("nouns.txt")
 verbs = getWords("verbs.txt")
@@ -54,12 +55,12 @@ def nounPhrase():
 
 def verbPhrase():
     """Builds and returns a verb phrase."""
-    #the prepositionsClause is called/not called randomly based on the random choice from numbers
-    return random.choice(verbs) + " " + nounPhrase() + (prepositionalPhrase() if random.choice(numbers) == 1 else "")
+    # prepositionsClause() is called/not called randomly based on the random choice from numbers
+    return random.choice(verbs) + " " + nounPhrase() + (" " + prepositionalPhrase() if random.choice(numbers) == 1 else "")
 
 def prepositionalPhrase():
     """Builds and returns a preposition phrase"""
-    return " " + random.choice(prepositions) + " " + nounPhrase()
+    return random.choice(prepositions) + " " + nounPhrase()
 
 def conjunctionsClause(counter):
     """Builds and returns a conjunction and an independent clause"""
@@ -73,6 +74,6 @@ def main():
     to generate."""
     number = int(input("Enter the number of sentences: "))
     for count in range(number):
-        print(sentence())
+        print(f'{count + 1}){sentence()}\n')
         
 main()
