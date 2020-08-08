@@ -32,8 +32,8 @@ adjectives = getWords("adjectives.txt")
 
 def sentence(clauseCount=0):
     """Builds and returns a sentence."""
-    # the conjunctionsClause is called/not called randomly based on the random choice from numbers and
-    # the clauseCount variable prevents conjunctionClause from being called in the second independent clause
+    # conjunctionsClause() is called/not called randomly based on the random choice from numbers and
+    # the clauseCount variable prevents conjunctionClause from being called in the second independent clause formation
     return nounPhrase() + " " + verbPhrase() + (" " + conjunctionsClause(clauseCount) if random.choice(numbers) == 1 and clauseCount == 0 else "")
 
 def nounPhrase():
