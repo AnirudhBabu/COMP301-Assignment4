@@ -8,7 +8,7 @@ and vocabulary. Words are chosen at random.
 import random
 
 # serves as the basis for the random presence/absence of adjectives, conjunctions and independent clauses
-numbers = (0,1,0,1,0,1,0,1,0,1,1,1,0,1,1,0,1,0,1,0,1,0)
+numbers = (0,1,0,1,0,1,0,1,0,1,1,1,0,1,1,0,1,0,1,0,1,0,0,0,1)
 
 def getWords(filename):
     """Accepts a file name as a parameter and appends the lines of the file to words_list
