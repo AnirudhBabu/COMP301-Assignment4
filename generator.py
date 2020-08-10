@@ -46,10 +46,10 @@ def nounPhrase():
     
     if adjectivePresent:
         #checks if the adjective starts with a vowel to determine an appropriate article
-        articleSelected = articles[1] if adjectiveSelected[0] in ['A','E','I','O','U'] else random.choice([articles[0], articles[2]])
+        articleSelected = random.choice([articles[1], articles[2]]) if adjectiveSelected[0] in ['A','E','I','O','U'] else random.choice([articles[0], articles[2]])
     else:
         #checks if the noun starts with a vowel to determine an appropriate article
-        articleSelected = articles[1] if nounSelected[0] in ['A','E','I','O','U'] else random.choice([articles[0], articles[2]])
+        articleSelected = random.choice([articles[1], articles[2]]) if nounSelected[0] in ['A','E','I','O','U'] else random.choice([articles[0], articles[2]])
     
     return articleSelected + " " + adjectiveSelected + nounSelected
 
